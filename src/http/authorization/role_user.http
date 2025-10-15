@@ -1,0 +1,40 @@
+### roleUser.http
+
+@baseUrl = http://localhost:4000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+### ================== RUTAS SIN AUTENTICACIÓN ==================
+
+### Obtener todos los roles de usuario
+GET {{baseUrl}}/api/roleUsers
+
+### Obtener rol de usuario por ID
+GET {{baseUrl}}/api/roleUsers/1
+
+### Crear un nuevo rol de usuario
+POST {{baseUrl}}/api/roleUsers
+Content-Type: application/json
+
+{
+  "role_id": 1,
+  "user_id": 1,
+  "is_active": "ACTIVE"
+}
+
+### Actualizar un rol de usuario
+PATCH {{baseUrl}}/api/roleUsers/1
+Content-Type: application/json
+
+{
+  "role_id": 2,
+  "user_id": 1,
+  "is_active": "ACTIVE"
+}
+
+### Eliminar un rol de usuario físicamente
+DELETE {{baseUrl}}/api/roleUsers/1
+
+### Eliminar un rol de usuario lógicamente
+DELETE {{baseUrl}}/api/roleUsers/1/logic
+
+### ================== RUTAS CON AUTENTICACIÓN ==================

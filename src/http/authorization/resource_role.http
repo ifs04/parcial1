@@ -1,0 +1,40 @@
+### resourceRole.http
+
+@baseUrl = http://localhost:4000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+### ================== RUTAS SIN AUTENTICACIÓN ==================
+
+### Obtener todos los roles de recursos
+GET {{baseUrl}}/api/resource-roles
+
+### Obtener rol de recurso por ID
+GET {{baseUrl}}/api/resource-roles/1
+
+### Crear un nuevo rol de recurso
+POST {{baseUrl}}/api/resource-roles
+Content-Type: application/json
+
+{
+  "resource_id": 1,
+  "role_id": 1,
+  "is_active": "ACTIVE"
+}
+
+### Actualizar un rol de recurso
+PATCH {{baseUrl}}/api/resource-roles/1
+Content-Type: application/json
+
+{
+  "resource_id": 1,
+  "role_id": 2,
+  "is_active": "ACTIVE"
+}
+
+### Eliminar un rol de recurso físicamente
+DELETE {{baseUrl}}/api/resource-roles/1
+
+### Eliminar un rol de recurso lógicamente
+DELETE {{baseUrl}}/api/resource-roles/1/logic
+
+### ================== RUTAS CON AUTENTICACIÓN ==================

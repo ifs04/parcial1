@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:4000
+
+### Peticiones sin TOKEN
+
+### Obtener todas las noticias
+GET {{baseUrl}}/news/public
+
+### Obtener noticia por ID
+GET {{baseUrl}}/news/public/1
+
+### Crear una nueva noticia
+POST {{baseUrl}}/news/public
+Content-Type: application/json
+
+{
+    "abstract": "Nueva tecnología revoluciona la industria",
+    "content_news": "Contenido detallado de la noticia sobre la nueva tecnología...",
+    "author_id": 1,
+    "status": "PUBLISHED"
+}
+
+### Actualizar una noticia
+PATCH {{baseUrl}}/news/public/1
+Content-Type: application/json
+
+{
+    "abstract": "Tecnología actualizada revoluciona la industria",
+    "content_news": "Contenido actualizado de la noticia...",
+    "author_id": 1,
+    "status": "PUBLISHED"
+}
+
+### Eliminar una noticia físicamente
+DELETE {{baseUrl}}/news/public/1
+
+### Eliminar una noticia lógicamente
+DELETE {{baseUrl}}/news/public/1/logic

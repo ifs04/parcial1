@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:4000
+
+### Peticiones sin TOKEN
+
+### Obtener todos los autores
+GET {{baseUrl}}/api/authors
+
+### Obtener autor por ID
+GET {{baseUrl}}/api/authors/1
+
+### Crear un nuevo autor
+POST {{baseUrl}}/api/authors
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "bio": "Technical writer and journalist",
+    "status": "ACTIVE"
+}
+
+### Actualizar un autor
+PATCH {{baseUrl}}/api/authors/1
+Content-Type: application/json
+
+{
+    "name": "John Doe Updated",
+    "email": "john.updated@example.com",
+    "bio": "Senior Technical Writer and Editor",
+    "status": "ACTIVE"
+}
+
+### Eliminar un autor físicamente
+DELETE {{baseUrl}}/api/authors/1
+
+### Eliminar un autor lógicamente (cambiar status a INACTIVE)
+DELETE {{baseUrl}}/api/authors/1/logic
